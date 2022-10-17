@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+<label>DIGITA UN PRIMER NUMERO</label><input type="number" id="n1" ><br>
+<label>DIGITA UN SEGUNDO NUMERO</label><input type="number" id="n2" ><br>
+
+
+<button id="suma">SUMA</button>
+<button id="resta">RESTA</button>
+<button id="multiplicacion">MULTIPLICACION</button>
+<button id="division">DIVISION</button>
+<button id="calcular">CALCULAR</button><br>
+
+
+<output id="r"></output> 
+
+<script>
+
+    let opc;
+    document.getElementById('suma').addEventListener('click', () =>{
+        opc = '+';
+    });
+    document.getElementById('resta').addEventListener('click', () =>{
+        opc = '-';
+    });
+    document.getElementById('multiplicacion').addEventListener('click', () =>{
+        opc = '*';
+    });
+    document.getElementById('division').addEventListener('click', () =>{
+        opc = '/';
+    });
+
+    document.getElementById('calcular').addEventListener('click', () =>{
+        const n1 = parseInt(document.getElementById('n1').value);
+        const n2 = parseInt(document.getElementById('n2').value);
+      
+        let r;
+        if(opc == '+'){
+            r = n1 + n2;
+        }else if( opc == '-'){
+            r = n1 - n2;
+        }else if(opc == '*'){
+            r = n1 * n2;
+        }else if(opc == '/'){
+            r = n1 / n2;
+        }
+        document.getElementById('r').innerHTML = "EL RESULTADO ES: " + r;
+    });
+
+</script>
+
+</body>
+</html>
